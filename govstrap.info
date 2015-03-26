@@ -1,5 +1,5 @@
 name        = govStrap
-description = Light weight bootstrap starting theme
+description = Light weight bootstrap base theme
 core        = 7.x
 
 ;;;;;;;;;;;;;;;;;;;;;
@@ -21,6 +21,8 @@ regions[page_bottom]    = Page bottom
 ;; Settings
 ;;;;;;;;;;;;;;;;;;;;;
 
+settings[govstrap_skip_link_anchor] = main-content
+settings[govstrap_skip_link_text]   = Skip to main content
 settings[govstrap_rebuild_registry] = 0
 
 ;;;;;;;;;;;;;;;;;;;;;
