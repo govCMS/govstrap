@@ -22,7 +22,6 @@ function govstrap_breadcrumb($variables) {
             $breadcrumb[] = 'Form';
             $breadcrumb[] = $node->field_title['und'][0]['value'];
             break;
-
         }
       }
     }
@@ -34,8 +33,6 @@ function govstrap_breadcrumb($variables) {
     }
 
     $breadcrumbs = '<ol class="breadcrumb">';
-
-    $count = count($breadcrumb) - 1;
     foreach ($breadcrumb as $key => $value) {
       $breadcrumbs .= '<li>' . $value . '</li>';
     }
