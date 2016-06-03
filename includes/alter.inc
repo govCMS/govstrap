@@ -44,6 +44,30 @@ function govstrap_js_alter(&$js) {
     $js['misc/jquery.once.js'] += drupal_js_defaults('misc/jquery.once.js');
   }
 
+  // jQuery update.
+  $node_admin_paths = array(
+    'node/*/edit',
+    'node/add',
+    'node/add/*',
+  );
+  $replace_jquery = TRUE;
+  if (path_is_admin(current_path())) {
+    $replace_jquery = FALSE;
+  }
+  else {
+    foreach ($node_admin_paths as $node_admin_path) {
+      if (drupal_match_path(current_path(), $node_admin_path)) {
+        $replace_jquery = FALSE;
+      }
+    }
+  }
+  // Swap out jQuery to use an updated version of the library.
+  if ($replace_jquery) {
+    $js['misc/jquery.js']['data'] = $theme_path . '/js/jquery.min.js';
+    // CDN.
+    $js['misc/jquery.js']['version'] = '1.9.1';
+  }
+
   // Load bootstrap js
   $bootstrap = $theme_path . '/js/bootstrap.js';
   $js[$bootstrap] = drupal_js_defaults($bootstrap);
