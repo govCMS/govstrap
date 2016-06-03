@@ -8,6 +8,10 @@
   <?php print render($page['header']); ?>
 </header><!-- /#page-header -->
 <div id="main" class="main-container <?php print $container_class; ?>">
+  <?php if (!empty($page['highlighted'])): ?>
+    <div class="highlighted jumbotron"><?php print render($page['highlighted']); ?></div>
+  <?php endif; ?>
+  <?php print $messages; ?>
   <div id="content" class="row">
     <?php if (!empty($page['sidebar_first'])): ?>
       <aside class="col-sm-3" role="complementary">
@@ -15,17 +19,13 @@
       </aside>  <!-- /#sidebar-first -->
     <?php endif; ?>
     <section id="main-content-section" class="<?php print $content_column_class; ?>" role="main">
-      <?php if (!empty($page['highlighted'])): ?>
-        <div class="highlighted jumbotron"><?php print render($page['highlighted']); ?></div>
-      <?php endif; ?>
-      <?php if (!empty($breadcrumb)): print $breadcrumb; endif;?>
       <a id="main-content"></a>
+      <?php if (!empty($breadcrumb)): print $breadcrumb; endif;?>
       <?php print render($title_prefix); ?>
       <?php if (!empty($title)): ?>
         <h1 class="page-header"><?php print $title; ?></h1>
       <?php endif; ?>
       <?php print render($title_suffix); ?>
-      <?php print $messages; ?>
       <?php if (!empty($tabs)): ?>
         <?php print render($tabs); ?>
       <?php endif; ?>

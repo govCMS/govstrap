@@ -1,11 +1,12 @@
 name        = govStrap
-description = Light weight bootstrap base theme
+description = Light weight bootstrap base theme.
 core        = 7.x
 
 ;;;;;;;;;;;;;;;;;;;;;
 ;; Regions
 ;;;;;;;;;;;;;;;;;;;;;
 
+regions[header_menu]    = Header Menu
 regions[header]         = Header
 regions[navigation]     = Navigation bar
 regions[highlighted]    = Highlighted
@@ -14,6 +15,7 @@ regions[content]        = Content
 regions[sidebar_first]  = Sidebar left
 regions[sidebar_second] = Sidebar right
 regions[footer]         = Footer
+regions[footer_menu]    = Footer Menu
 regions[page_top]       = Page top
 regions[page_bottom]    = Page bottom
 

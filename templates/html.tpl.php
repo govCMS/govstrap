@@ -4,7 +4,6 @@
  * html.tpl.php - Default theme implementation.
  */
 ?>
-
 <!DOCTYPE html>
 <html lang="<?php print $language->language; ?>" dir="<?php print $language->dir; ?>"<?php print $rdf_namespaces;?>>
 <head profile="<?php print $grddl_profile ?>">
@@ -12,8 +11,10 @@
   <meta name="MobileOptimized" content="width">
   <meta name="HandheldFriendly" content="true">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <?php print $head ?>
   <title><?php print $head_title ?></title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta property="og:title" content="<?php print $head_title; ?>"/>
+  <?php print $head ?>
   <?php print $styles ?>
   <?php print $scripts ?>
 </head>

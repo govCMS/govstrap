@@ -18,6 +18,7 @@ if (theme_get_setting('govstrap_rebuild_registry') && !defined('MAINTENANCE_MODE
  */
 function govstrap_theme(&$existing, $type, $theme, $path) {
   include_once './' . drupal_get_path('theme', 'govstrap') . '/includes/registry.inc';
+
   return _govstrap_theme($existing, $type, $theme, $path);
 }
 
@@ -45,3 +46,8 @@ include_once './' . drupal_get_path('theme', 'govstrap') . '/includes/process.in
  * Include hook_*_alter() hooks.
  */
 include_once './' . drupal_get_path('theme', 'govstrap') . '/includes/alter.inc';
+
+/**
+ * Include normal theme overwrite.
+ */
+include_once './' . drupal_get_path('theme', 'govstrap') . '/includes/theme.inc';

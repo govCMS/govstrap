@@ -12,6 +12,7 @@ include_once './' . drupal_get_path('theme', 'govstrap') . '/includes/common.inc
 
 /**
  * Implements hook_form_system_theme_settings_alter().
+ *
  * @param $form
  * @param $form_state
  * @param null $form_id
@@ -23,31 +24,73 @@ function govstrap_form_system_theme_settings_alter(&$form, $form_state, $form_id
     return;
   }
 
+  // Horizontal tabs container
+  $form['group_tabs'] = array(
+    '#weight' => -99,
+    '#type' => 'vertical_tabs',
+    '#attached' => array(
+      'library' => array(
+        array(
+          'field_group',
+          'horizontal-tabs',
+          'vertical-tabs',
+        ),
+      ),
+    ),
+  );
+
+  // Default tab.
+  $form['group_tab_default'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Theme settings'),
+    '#group' => 'group_tabs',
+  );
+
+  // Set default tab.
+  foreach ($form as $k => $v) {
+    if ($k == 'group_tabs') {
+      continue;
+    }
+    if ($k !== 'group_tab_default') {
+      $form['group_tab_default'][$k] = $form[$k];
+      $form['group_tab_default'][$k]['#group'] = 'group_tab_default';
+      unset($form[$k]);
+    }
+  }
+
   // Accessibility and support settings
   $form['support'] = array(
-    '#type'          => 'fieldset',
-    '#title'         => t('Accessibility and support settings'),
+    '#type' => 'fieldset',
+    '#title' => t('Accessibility and support settings'),
+    '#description' => t("Accessibility and support settingss."),
+    '#collapsible' => TRUE,
+    '#collapsed' => FALSE,
+    '#group' => 'group_tabs',
   );
 
   $form['support']['govstrap_skip_link_anchor'] = array(
-    '#type'          => 'textfield',
-    '#title'         => t('Anchor ID for the “skip link”'),
+    '#type' => 'textfield',
+    '#title' => t('Anchor ID for the “skip link”'),
     '#default_value' => theme_get_setting('govstrap_skip_link_anchor'),
-    '#field_prefix'  => '#',
-    '#description'   => t('Specify the HTML ID of the element that the accessible-but-hidden “skip link” should link to. Note: that element should have the <code>tabindex="-1"</code> attribute to prevent an accessibility bug in webkit browsers. (<a href="!link">Read more about skip links</a>.)', array('!link' => 'https://drupal.org/node/467976')),
+    '#field_prefix' => '#',
+    '#description' => t('Specify the HTML ID of the element that the accessible-but-hidden “skip link” should link to. Note: that element should have the <code>tabindex="-1"</code> attribute to prevent an accessibility bug in webkit browsers. (<a href="!link">Read more about skip links</a>.)', array('!link' => 'https://drupal.org/node/467976')),
   );
 
   $form['support']['govstrap_skip_link_text'] = array(
-    '#type'          => 'textfield',
-    '#title'         => t('Text for the “skip link”'),
+    '#type' => 'textfield',
+    '#title' => t('Text for the “skip link”'),
     '#default_value' => theme_get_setting('govstrap_skip_link_text'),
-    '#description'   => t('For example: <em>Jump to navigation</em>, <em>Skip to content</em>'),
+    '#description' => t('For example: <em>Jump to navigation</em>, <em>Skip to content</em>'),
   );
 
-  // Theme development settings
+  // Development settings.
   $form['development'] = array(
     '#type' => 'fieldset',
-    '#title' => t('Theme development settings'),
+    '#title' => t('Development'),
+    '#description' => t("Development settings."),
+    '#collapsible' => TRUE,
+    '#collapsed' => FALSE,
+    '#group' => 'group_tabs',
   );
 
   $form['development']['govstrap_rebuild_registry'] = array(

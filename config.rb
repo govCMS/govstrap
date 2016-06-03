@@ -10,8 +10,8 @@ require 'bootstrap-sass'
 # Location of the theme's resources.
 http_path = "/"
 css_dir = "css"
-sass_dir = "sass"
-images_dir = "images"
+sass_dir = "src/sass"
+images_dir = "img"
 javascripts_dir = "js"
 fonts_dir = "fonts"
 output_style = :nested
@@ -22,4 +22,5 @@ relative_assets = true
 
 line_comments = (environment == :development) ? true : false
 
-Sass::Script::Number.precision = 5
+# CSS sourcemaps.
+sourcemap = false
