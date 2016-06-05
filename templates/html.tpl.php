@@ -5,13 +5,18 @@
  */
 ?>
 <!DOCTYPE html>
-<html lang="<?php print $language->language; ?>" dir="<?php print $language->dir; ?>"<?php print $rdf_namespaces;?>>
+<!--[if IEMobile 7]><html class="iem7" <?php print $html_attributes; ?>><![endif]-->
+<!--[if lte IE 6]><html class="lt-ie9 lt-ie8 lt-ie7" <?php print $html_attributes; ?>><![endif]-->
+<!--[if (IE 7)&(!IEMobile)]><html class="lt-ie9 lt-ie8" <?php print $html_attributes; ?>><![endif]-->
+<!--[if IE 8]><html class="lt-ie9" <?php print $html_attributes; ?>><![endif]-->
+<!--[if (gte IE 9)|(gt IEMobile 7)]><!--><html <?php print $html_attributes . $rdf_namespaces; ?>><!--<![endif]-->
 <head profile="<?php print $grddl_profile ?>">
   <meta charset="utf-8">
+  <title><?php print $head_title ?></title>
   <meta name="MobileOptimized" content="width">
   <meta name="HandheldFriendly" content="true">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><?php print $head_title ?></title>
+  <meta http-equiv="cleartype" content="on">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta property="og:title" content="<?php print $head_title; ?>"/>
   <?php print $head ?>
