@@ -5,6 +5,13 @@
  */
 
 /**
+ * Implements hook_process_html().
+ */
+function govstrap_process_html(&$variables, $hook) {
+  $variables['html_attributes'] = drupal_attributes($variables['html_attributes_array']);
+}
+
+/**
  * Implements hook_process_block().
  */
 function govstrap_process_block(&$variables, $hook) {

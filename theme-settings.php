@@ -58,11 +58,100 @@ function govstrap_form_system_theme_settings_alter(&$form, $form_state, $form_id
     }
   }
 
-  // Accessibility and support settings
+  // Bootstrap settings.
+  $form['bootstrap'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Bootstrap'),
+    '#description' => t("Bootstrap settings."),
+    '#collapsible' => TRUE,
+    '#collapsed' => FALSE,
+    '#group' => 'group_tabs',
+  );
+
+  $form['bootstrap']['bootstrap_enabled'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Enable bootstrap'),
+    '#default_value' => theme_get_setting('bootstrap_enabled'),
+  );
+
+  $form['bootstrap']['bootstrap_cdn'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('BootstrapCDN'),
+    '#group' => 'bootstrap',
+    '#states' => array(
+      'invisible' => array(
+        // If the checkbox is not enabled, show the container.
+        'input[name="bootstrap_enabled"]' => array('checked' => FALSE),
+      ),
+    ),
+  );
+
+  $form['bootstrap']['bootstrap_cdn']['bootstrap_css_cdn'] = array(
+    '#type' => 'select',
+    '#title' => t('BootstrapCDN Complete CSS version'),
+    '#options' => drupal_map_assoc(array(
+      '3.3.6',
+    )),
+    '#default_value' => theme_get_setting('bootstrap_css_cdn'),
+    '#empty_option' => t('Disabled'),
+    '#empty_value' => NULL,
+  );
+
+  $form['bootstrap']['bootstrap_cdn']['bootstrap_js_cdn'] = array(
+    '#type' => 'select',
+    '#title' => t('BootstrapCDN Complete JavaScript version'),
+    '#options' => drupal_map_assoc(array(
+      '3.3.6',
+    )),
+    '#default_value' => theme_get_setting('bootstrap_js_cdn'),
+    '#empty_option' => t('Disabled'),
+    '#empty_value' => NULL,
+  );
+
+  // Fontawesome settings.
+  $form['fontawesome'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Font Awesome'),
+    '#description' => t("Font Awesome settings."),
+    '#collapsible' => TRUE,
+    '#collapsed' => FALSE,
+    '#group' => 'group_tabs',
+  );
+
+  $form['fontawesome']['fontawesome_enabled'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Enable Font Awesome'),
+    '#default_value' => theme_get_setting('fontawesome_enabled'),
+  );
+
+  $form['fontawesome']['fontawesome_cdn'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Font Awesome CDN'),
+    '#group' => 'fontawesome',
+    '#states' => array(
+      'invisible' => array(
+        // If the checkbox is not enabled, show the container.
+        'input[name="fontawesome_enabled"]' => array('checked' => FALSE),
+      ),
+    ),
+  );
+
+  $form['fontawesome']['fontawesome_cdn']['fontawesome_css_cdn'] = array(
+    '#type' => 'select',
+    '#title' => t('Font Awesome CDN Complete CSS version'),
+    '#options' => drupal_map_assoc(array(
+      '4.6.3',
+    )),
+    '#default_value' => theme_get_setting('fontawesome_css_cdn'),
+    '#empty_option' => t('Disabled'),
+    '#empty_value' => NULL,
+  );
+
+  // Accessibility and support settings.
   $form['support'] = array(
     '#type' => 'fieldset',
-    '#title' => t('Accessibility and support settings'),
-    '#description' => t("Accessibility and support settingss."),
+    '#title' => t('Accessibility and support'),
+    '#description' => t("Accessibility and support settings."),
     '#collapsible' => TRUE,
     '#collapsed' => FALSE,
     '#group' => 'group_tabs',

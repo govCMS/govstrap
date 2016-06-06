@@ -28,6 +28,18 @@ settings[govstrap_skip_link_text]   = Skip to main content
 settings[govstrap_rebuild_registry] = 0
 
 ;;;;;;;;;;;;;;;;;;;;;
+;; Javascript.
+;;;;;;;;;;;;;;;;;;;;;
+
+scripts[] = js/scripts.js
+
+;;;;;;;;;;;;;;;;;;;;;
+;; Stylesheet.
+;;;;;;;;;;;;;;;;;;;;;
+
+stylesheets[all][] = css/styles.css
+
+;;;;;;;;;;;;;;;;;;;;;
 ;; Excludes
 ;;;;;;;;;;;;;;;;;;;;;
 
