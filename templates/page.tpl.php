@@ -7,6 +7,9 @@
 <header id="header" class="header <?php print $container_class; ?>" role="banner">
   <?php print render($page['header']); ?>
 </header><!-- /#page-header -->
+<nav id="navigation" class="<?php print $container_class; ?>">
+  <?php print render($page['navigation']); ?>
+</nav><!-- /#page-header -->
 <main>
   <div id="main" class="main-container <?php print $container_class; ?>">
     <?php if (!empty($page['highlighted'])): ?>
