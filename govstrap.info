@@ -23,6 +23,15 @@ regions[page_bottom]    = Page bottom
 ;; Settings
 ;;;;;;;;;;;;;;;;;;;;;
 
+features[] = logo
+features[] = name
+features[] = slogan
+features[] = node_user_picture
+features[] = comment_user_picture
+features[] = favicon
+features[] = main_menu
+features[] = secondary_menu
+
 settings[govstrap_skip_link_anchor] = main-content
 settings[govstrap_skip_link_text]   = Skip to main content
 settings[govstrap_rebuild_registry] = 0
