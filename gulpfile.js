@@ -7,9 +7,8 @@
 // SETUP STEPS:
 //
 // # brew|apt install node
-// # [sudo] npm install -g gulp gulp-jshint gulp-imagemin gulp-notify gulp-autoprefixer gulp-minify-css gulp-compass gulp-uncss gulp-concat gulp-uglify casperjs phantomjs-prebuilt jshint
-// # cd [path]/govcms-theme/govcms-theme/
-// # [sudo] npm link gulp gulp-jshint gulp-imagemin gulp-notify gulp-autoprefixer gulp-minify-css gulp-compass gulp-uncss gulp-concat gulp-uglify casperjs phantomjs-prebuilt jshint
+// # npm install -g gulp gulp-jshint gulp-clean-css gulp-imagemin gulp-notify gulp-autoprefixer gulp-minify-css gulp-compass gulp-uncss gulp-concat gulp-uglify casperjs phantomjs-prebuilt jshint
+// # (node_modules folder is gitignored)
 //
 // Then just run 'gulp' to watch directory for changes :)
 //
