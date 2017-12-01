@@ -36,5 +36,14 @@ Temporary Items
 # Sass Cache folder
 .sass-cache
 
-# IDEs
-.idea
+## IDEs
+# JetBrains
+.idea     
+# netbeans
+nbproject/
+#eclipse
+.settings/
+.project
+.buildpath
+# generic code editors
+.editorconfig
