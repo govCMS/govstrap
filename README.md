@@ -14,4 +14,4 @@ In theme folder, run following commands in terminal:
 
 ```bundle install```
 
-run 'compass watch' or 'gulp watch' to watch directory for changes :)
+run 'gulp' to watch directory for changes :)
