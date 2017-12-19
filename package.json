@@ -1,35 +1,51 @@
 {
   "name": "govstrap",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "This project is a GovCMS light weight bootstrap base theme",
-  "main": "",
-  "dependencies": {},
-  "devDependencies": {
-    "casperjs": "^1.1.1",
-    "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^3.1.0",
-    "gulp-compass": "^2.1.0",
-    "gulp-concat": "^2.6.0",
-    "gulp-imagemin": "^3.0.1",
-    "gulp-jshint": "^2.0.1",
-    "gulp-clean-css": "^2.0.6",
-    "gulp-notify": "^2.2.0",
-    "gulp-uglify": "^1.5.3",
-    "gulp-uncss": "^1.0.5",
-    "jshint": "^2.9.2",
-    "phantomjs-prebuilt": "^2.1.7"
+  "author": "govCMS",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/govCMS/govstrap/issues"
   },
+  "homepage": "https://github.com/govCMS/govstrap#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/govCMS/govstrap.git"
   },
+  "main": "gulpfile.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "npm run development",
+    "development": "gulp",
+    "prod": "npm run production",
+    "production": "gulp",
+    "watch": "gulp watch",
+    "browser-sync": "browser-sync",
+    "test": "gulp test",
     "postinstall": "find node_modules/ -name '*.info' -type f -delete"
   },
-  "keywords": [
-    "bootstrap"
-  ],
-  "author": "",
-  "license": "UNLICENSED"
+  "devDependencies": {
+    "autoprefixer": "^7.1.6",
+    "browser-sync": "^2.18.13",
+    "cssnano": "^3.10.0",
+    "fs": "0.0.1-security",
+    "gulp": "^3.9.1",
+    "gulp-casperjs": "0.0.7",
+    "gulp-concat": "^2.6.1",
+    "gulp-iconfont": "^9.0.2",
+    "gulp-iconfont-css": "^2.1.0",
+    "gulp-iconfont-template": "0.0.3",
+    "gulp-imagemin": "^4.0.0",
+    "gulp-jshint": "^2.0.4",
+    "gulp-pa11y": "0.0.4",
+    "gulp-plumber": "^1.1.0",
+    "gulp-postcss": "^7.0.0",
+    "gulp-real-favicon": "^0.2.2",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-uglify": "^3.0.0",
+    "gulp-util": "^3.0.8",
+    "gulp-w3c-html-validation": "0.0.1",
+    "jshint": "^2.9.5",
+    "postcss-import": "^11.0.0"
+  }
 }
