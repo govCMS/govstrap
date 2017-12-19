@@ -24,6 +24,7 @@
     "postinstall": "find node_modules/ -name '*.info' -type f -delete"
   },
   "devDependencies": {
+    "@fortawesome/fontawesome": "^1.0.1",
     "autoprefixer": "^7.1.6",
     "bootstrap-sass": "^3.3.7",
     "browser-sync": "^2.18.13",
