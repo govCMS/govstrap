@@ -25,6 +25,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^7.1.6",
+    "bootstrap": "3",
     "browser-sync": "^2.18.13",
     "cssnano": "^3.10.0",
     "fs": "0.0.1-security",
