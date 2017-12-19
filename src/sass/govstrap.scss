@@ -1,5 +1,29 @@
 @charset "utf-8";
 
-@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
-
 // --- govStrap styles -----------------------------
+// Variables
+@import 'govstrap/vars';
+// Mixins
+@import 'govstrap/mixins';
+// Global
+@import 'govstrap/global';
+//  Text size etc.
+@import 'govstrap/typography';
+// All elements, such as btns, wells, etc
+@import 'govstrap/elements';
+// base responsive styles for govStrap styles
+@import 'govstrap/responsive';
+// Browser specific work around ...but basically just for IE & Edge:
+@import 'govstrap/browser-hacks';
+
+// --- govStrap theme specific styles --------------
+// Variables
+@import 'site-vars';
+// Bootstrap 3 and we give site second chance to alter the variables above.
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+// Main stylesheet
+@import 'site';
+// Responsive styles
+@import "site-responsive";
+// Print styles
+@import "site-print";
