@@ -1,5 +1,5 @@
 name        = govStrap
-description = Light weight bootstrap base theme.
+description = Light weight bootstrap base theme for govCMS7.
 core        = 7.x
 
 ;;;;;;;;;;;;;;;;;;;;;
@@ -46,7 +46,7 @@ scripts[] = js/scripts.js
 ;; Stylesheet.
 ;;;;;;;;;;;;;;;;;;;;;
 
-stylesheets[all][] = css/styles.css
+stylesheets[all][] = css/govstrap.css
 
 ;;;;;;;;;;;;;;;;;;;;;
 ;; Excludes
