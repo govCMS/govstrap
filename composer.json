@@ -1,0 +1,10 @@
+{
+    "name": "govcms/govstrap",
+    "description": "A govCMS7 light weight bootstrap base theme.",
+    "keywords": ["govCMS", "govCMS7"],
+    "type": "drupal-theme",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "license": "GPL-2.0+",
+    "require": {}
+}
