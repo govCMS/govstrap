@@ -9,23 +9,6 @@
  * Implements hook_css_alter().
  */
 function govstrap_css_alter(&$css) {
-  if (theme_get_setting('bootstrap_enabled') && !theme_get_setting('bootstrap_css_cdn')) {
-    $theme_path = drupal_get_path('theme', 'govstrap');
-    // Add bootstrap style file.
-    $bootstrap = $theme_path . '/css/govstrap-bootstrap.css';
-    // Add bootstrap css.
-    $css[$bootstrap] = array(
-      'data' => $bootstrap,
-      'type' => 'file',
-      'every_page' => TRUE,
-      'media' => 'all',
-      'preprocess' => TRUE,
-      'group' => CSS_THEME,
-      'browsers' => array('IE' => TRUE, '!IE' => TRUE),
-      'weight' => -1,
-    );
-  }
-
   // Exclude css
   if (!empty($excludes)) {
     $css = array_diff_key($css, drupal_map_assoc($excludes));
@@ -68,14 +51,6 @@ function govstrap_js_alter(&$js) {
     $js['misc/jquery.js']['data'] = $theme_path . '/js/jquery.min.js';
     // CDN.
     $js['misc/jquery.js']['version'] = '3.2.1';
-  }
-
-  // Load bootstrap js
-  if (theme_get_setting('bootstrap_enabled') && !theme_get_setting('bootstrap_js_cdn')) {
-    $bootstrap = $theme_path . '/js/bootstrap.min.js';
-    $js[$bootstrap] = drupal_js_defaults($bootstrap);
-    $js[$bootstrap]['group'] = JS_THEME;
-    $js[$bootstrap]['scope'] = 'footer';
   }
 
   // Exclude js

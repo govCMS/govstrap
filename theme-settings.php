@@ -58,56 +58,6 @@ function govstrap_form_system_theme_settings_alter(&$form, $form_state, $form_id
     }
   }
 
-  // Bootstrap settings.
-  $form['bootstrap'] = array(
-    '#type' => 'fieldset',
-    '#title' => t('Bootstrap'),
-    '#description' => t("Bootstrap settings."),
-    '#collapsible' => TRUE,
-    '#collapsed' => FALSE,
-    '#group' => 'group_tabs',
-  );
-
-  $form['bootstrap']['bootstrap_enabled'] = array(
-    '#type' => 'checkbox',
-    '#title' => t('Enable bootstrap'),
-    '#default_value' => theme_get_setting('bootstrap_enabled'),
-  );
-
-  $form['bootstrap']['bootstrap_cdn'] = array(
-    '#type' => 'fieldset',
-    '#title' => t('BootstrapCDN'),
-    '#group' => 'bootstrap',
-    '#states' => array(
-      'invisible' => array(
-        // If the checkbox is not enabled, show the container.
-        'input[name="bootstrap_enabled"]' => array('checked' => FALSE),
-      ),
-    ),
-  );
-
-  $form['bootstrap']['bootstrap_cdn']['bootstrap_css_cdn'] = array(
-    '#type' => 'select',
-    '#title' => t('BootstrapCDN Complete CSS version'),
-    '#options' => drupal_map_assoc(array(
-      '3.3.6',
-    )),
-    '#default_value' => theme_get_setting('bootstrap_css_cdn'),
-    '#empty_option' => t('Disabled'),
-    '#empty_value' => NULL,
-  );
-
-  $form['bootstrap']['bootstrap_cdn']['bootstrap_js_cdn'] = array(
-    '#type' => 'select',
-    '#title' => t('BootstrapCDN Complete JavaScript version'),
-    '#options' => drupal_map_assoc(array(
-      '3.3.6',
-    )),
-    '#default_value' => theme_get_setting('bootstrap_js_cdn'),
-    '#empty_option' => t('Disabled'),
-    '#empty_value' => NULL,
-  );
-
   // Fontawesome settings.
   $form['fontawesome'] = array(
     '#type' => 'fieldset',
