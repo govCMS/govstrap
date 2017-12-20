@@ -20,8 +20,20 @@ function govstrap_preprocess_html(&$variables, $hook) {
   // Send X-UA-Compatible HTTP header to force IE to use the most recent
   // rendering engine or use Chrome's frame rendering engine if available.
   if (is_null(drupal_get_http_header('X-UA-Compatible'))) {
-    drupal_add_http_header('X-UA-Compatible', 'IE=edge,chrome=1');
+    drupal_add_http_header('X-UA-Compatible', 'IE=edge');
   }
+
+  // IE8 support of HTML5 elements and media queries .
+  $ie_script_s = array(
+    '#browsers' => array('IE' => 'lt IE 9', '!IE' => FALSE),
+    '#tag' => 'script',
+    '#attributes' => array(
+      'type' => "text/javascript",
+      'src' => './' . $variables['path_to_govstrap'] . '/js/modernizr.js',
+
+    ),
+  );
+  drupal_add_html_head($ie_script_s, "govstrapmodernizr");
 
   // IE8 support of HTML5 elements and media queries.
   $ie_script_r = array(
@@ -33,18 +45,6 @@ function govstrap_preprocess_html(&$variables, $hook) {
     ),
   );
   drupal_add_html_head($ie_script_r, "govstraprespond");
-
-  // IE8 support of HTML5 elements and media queries .
-  $ie_script_s = array(
-    '#browsers' => array('IE' => 'lt IE 9', '!IE' => FALSE),
-    '#tag' => 'script',
-    '#attributes' => array(
-      'type' => "text/javascript",
-      'src' => './' . $variables['path_to_govstrap'] . '/js/html5shiv.js',
-
-    ),
-  );
-  drupal_add_html_head($ie_script_s, "govstrapshiv");
 
   if (theme_get_setting('bootstrap_enabled') && theme_get_setting('bootstrap_css_cdn')) {
     // Add bootstrap style file.
