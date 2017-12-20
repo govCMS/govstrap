@@ -33,6 +33,7 @@ const atImport = require('postcss-import');
 const autoprefixer = require('autoprefixer');
 const rename = require('gulp-rename');
 const browserSync = require('browser-sync').create();
+const modernizr = require('gulp-modernizr');
 
 // Project vars
 // URL to test locally.
@@ -77,6 +78,14 @@ gulp.task('scripts', function() {
     .pipe(uglify())
     // .pipe(rename({ extname: '.min.js' }))
     .pipe(gulp.dest('./js/'));
+});
+
+
+// Modernizr
+gulp.task('modernizr', function() {
+  gulp.src('./src/js/*.js')
+    .pipe(modernizr())
+    .pipe(gulp.dest('./js/'))
 });
 
 
@@ -253,11 +262,11 @@ gulp.task('check-for-favicon-update', function(done) {
 
 
 // Default gulp task.
-gulp.task('default', ['images', 'scripts', 'styles']);
+gulp.task('default', ['images', 'scripts', 'modernizr', 'styles']);
 
 
 // Watch changes.
-gulp.task('watch', ['images', 'scripts', 'styles'], function() {
+gulp.task('watch', ['images', 'scripts', 'modernizr', 'styles'], function() {
   // Watch for img optim changes.
   gulp.watch('./src/img/**', function() {
     gulp.start('images');
