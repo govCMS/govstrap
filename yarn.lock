@@ -2771,6 +2771,12 @@ grunt-legacy-log@~0.1.1:
     lodash "~2.4.1"
     underscore.string "~2.3.3"
 
+gulp-buffer@^0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/gulp-buffer/-/gulp-buffer-0.0.2.tgz#af81b4346101736b49942ec6c9fa867ffe737036"
+  dependencies:
+    through2 "~0.4.0"
+
 gulp-casperjs@0.0.7:
   version "0.0.7"
   resolved "https://registry.yarnpkg.com/gulp-casperjs/-/gulp-casperjs-0.0.7.tgz#354d5141d96633cab2fc92a76bda494c7aeae58a"
