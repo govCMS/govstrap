@@ -63,6 +63,12 @@ gulp.task('scripts', function() {
     }))
     .pipe(gulp.dest('./js/'));
 
+  gulp.src('node_modules/bootstrap-sass/assets/javascripts/**')
+    .pipe(plumber({
+      errorHandler: onError
+    }))
+    .pipe(gulp.dest('./js/'));
+
   return gulp.src('./src/js/*.js')
     .pipe(plumber({
       errorHandler: onError
