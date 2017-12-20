@@ -46,22 +46,10 @@ function govstrap_preprocess_html(&$variables, $hook) {
   );
   drupal_add_html_head($ie_script_r, "govstraprespond");
 
-  if (theme_get_setting('bootstrap_enabled') && theme_get_setting('bootstrap_css_cdn')) {
-    // Add bootstrap style file.
-    $bootstrap = 'https://maxcdn.bootstrapcdn.com/bootstrap/' . theme_get_setting('bootstrap_css_cdn') . '/css/bootstrap.min.css';
-    drupal_add_css($bootstrap, array('type' => 'external'));
-  }
-
   if (theme_get_setting('fontawesome_enabled') && theme_get_setting('fontawesome_css_cdn')) {
-    // Add bootstrap style file.
-    $fontawesome = 'https://maxcdn.bootstrapcdn.com/font-awesome/' . theme_get_setting('fontawesome_css_cdn') . '/css/font-awesome.min.css';
-    drupal_add_css($fontawesome, array('type' => 'external'));
-  }
-
-  if (theme_get_setting('bootstrap_enabled') && theme_get_setting('bootstrap_js_cdn')) {
-    // Add bootstrap style file.
-    $bootstrap = 'https://maxcdn.bootstrapcdn.com/bootstrap/' . theme_get_setting('bootstrap_js_cdn') . '/js/bootstrap.min.js';
-    drupal_add_js($bootstrap, array('type' => 'external'));
+    // Add fontawesome CDN file.
+    $fontawesome = 'https://use.fontawesome.com/releases/' . theme_get_setting('fontawesome_css_cdn') . '/js/all.js';
+    drupal_add_js($fontawesome, array('type' => 'external', 'defer' => TRUE));
   }
 
   // Accessibility settings.

@@ -90,7 +90,7 @@ function govstrap_form_system_theme_settings_alter(&$form, $form_state, $form_id
     '#type' => 'select',
     '#title' => t('Font Awesome CDN Complete CSS version'),
     '#options' => drupal_map_assoc(array(
-      '4.6.3',
+      'v5.0.2',
     )),
     '#default_value' => theme_get_setting('fontawesome_css_cdn'),
     '#empty_option' => t('Disabled'),
