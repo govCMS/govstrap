@@ -57,6 +57,12 @@ var onError = function(err) {
 
 // JS minify.
 gulp.task('scripts', function() {
+  gulp.src('node_modules/jquery/dist/jquery.min.js')
+    .pipe(plumber({
+      errorHandler: onError
+    }))
+    .pipe(gulp.dest('./js/'));
+
   return gulp.src('./src/js/*.js')
     .pipe(plumber({
       errorHandler: onError
