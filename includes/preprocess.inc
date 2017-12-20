@@ -114,6 +114,14 @@ function govstrap_preprocess_page(&$variables) {
 }
 
 /**
+ * Implements hook_preprocess_node().
+ */
+function govstrap_preprocess_node(&$variables, $hook) {
+  // Add a theme hook suggestion for type and view mode.
+  $variables['theme_hook_suggestions'][] = 'node__' . $variables['type'] . '__' . $variables['view_mode'];
+}
+
+/**
  * Implements hook_preprocess_block().
  */
 function govstrap_preprocess_block(&$variables, $hook) {
