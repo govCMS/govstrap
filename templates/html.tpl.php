@@ -13,11 +13,11 @@
 <head profile="<?php print $grddl_profile ?>">
   <meta charset="utf-8">
   <title><?php print $head_title ?></title>
-  <meta name="MobileOptimized" content="width">
-  <meta name="HandheldFriendly" content="true">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="cleartype" content="on">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="MobileOptimized" content="width">
+  <meta name="HandheldFriendly" content="true">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   <meta property="og:title" content="<?php print $head_title; ?>"/>
   <?php print $head ?>
   <?php print $styles ?>
