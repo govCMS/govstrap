@@ -67,7 +67,7 @@ function govstrap_js_alter(&$js) {
   if ($replace_jquery) {
     $js['misc/jquery.js']['data'] = $theme_path . '/js/jquery.min.js';
     // CDN.
-    $js['misc/jquery.js']['version'] = '1.9.1';
+    $js['misc/jquery.js']['version'] = '3.2.1';
   }
 
   // Load bootstrap js
