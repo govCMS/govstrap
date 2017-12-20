@@ -86,6 +86,18 @@ function govstrap_preprocess_html(&$variables, $hook) {
  * @see page.tpl.php
  */
 function govstrap_preprocess_page(&$variables) {
+  // Add pathToTheme to Drupal.settings in JS.
+  drupal_add_js('jQuery.extend(Drupal.settings, { "pathToTheme": "' . path_to_theme() . '" });', 'inline');
+
+  // Theme suggestions.
+  $header = drupal_get_http_header("status");
+  if ($header === "404 Not Found") {
+    $variables['theme_hook_suggestions'][] = 'page__404';
+  }
+  if ($header === "403 Forbidden") {
+    $variables['theme_hook_suggestions'][] = 'page__403';
+  }
+
   // Set page container columns.
   $variables['container_class'] = 'container';
 
