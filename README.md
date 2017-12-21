@@ -4,14 +4,30 @@
 
 This project is a govCMS7 light weight bootstrap base theme.
 
-## Theme Development Instructions
+### Work with it locally
 
-download and install node.js from http://nodejs.org/download
+#### Requirements
+- [npm](https://www.npmjs.com/)
+- [git](https://git-scm.com/)
 
-In theme folder, run following commands in terminal:
+#### Build and compile assets
 
-```npm install```
+Install the npm modules
 
-```bundle install```
+    $ cd MYPROJECT
+    $ npm (or yarn) install
 
-run 'gulp' to watch directory for changes :)
+Compile the assets
+
+    $ cd MYPROJECT
+    $ npm (or yarn) run prod (or dev)
+
+Watch for changes and compile the assets
+
+    $ cd MYPROJECT
+    $ npm (or yarn) run watch
+
+Watch for changes and compile the assets with browserSync
+
+    $ cd MYPROJECT
+    $ npm (or yarn) run browser-sync
