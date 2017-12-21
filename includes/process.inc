@@ -12,6 +12,28 @@ function govstrap_process_html(&$variables, $hook) {
 }
 
 /**
+ * Override or insert variables in the html_tag theme function.
+ */
+function govstrap_process_html_tag(&$variables) {
+  $tag = &$variables['element'];
+
+  if ($tag['#tag'] == 'style' || $tag['#tag'] == 'script') {
+    // Remove redundant CDATA comments.
+    unset($tag['#value_prefix'], $tag['#value_suffix']);
+
+    // Remove redundant type attribute.
+    if (isset($tag['#attributes']['type']) && $tag['#attributes']['type'] !== 'text/ng-template' && $tag['#attributes']['type'] !== 'application/ld+json') {
+      unset($tag['#attributes']['type']);
+    }
+
+    // Remove media="all" but leave others unaffected.
+    if (isset($tag['#attributes']['media']) && $tag['#attributes']['media'] === 'all') {
+      unset($tag['#attributes']['media']);
+    }
+  }
+}
+
+/**
  * Implements hook_process_block().
  */
 function govstrap_process_block(&$variables, $hook) {

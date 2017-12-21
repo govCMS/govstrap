@@ -13,11 +13,6 @@
  * @param $hook
  */
 function govstrap_preprocess_html(&$variables, $hook) {
-  // Return early, so the maintenance page does not call any of the code below.
-  if ($hook != 'html') {
-    return;
-  }
-
   // Set common variables.
   $variables['base_path'] = base_path();
   $variables['path_to_govstrap'] = drupal_get_path('theme', 'govstrap');
@@ -66,6 +61,11 @@ function govstrap_preprocess_html(&$variables, $hook) {
     'lang' => $variables['language']->language,
     'dir' => $variables['language']->dir,
   );
+
+  // Return early, so the maintenance page does not call any of the code below.
+  if ($hook != 'html') {
+    return;
+  }
 
   // Serialize RDF Namespaces into an RDFa 1.1 prefix attribute.
   if ($variables['rdf_namespaces']) {
