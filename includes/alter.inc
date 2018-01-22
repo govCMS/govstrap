@@ -51,8 +51,8 @@ function govstrap_js_alter(&$js) {
   // Swap out jQuery to use an updated version of the library.
   if ($replace_jquery) {
     $js['misc/jquery.js']['data'] = $theme_path . '/js/jquery.min.js';
-    // CDN.
-    $js['misc/jquery.js']['version'] = '3.2.1';
+    // Relace version.
+    $js['misc/jquery.js']['version'] = '3.3.1';
   }
 
   // Exclude js

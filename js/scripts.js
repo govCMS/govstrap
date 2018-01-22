@@ -1,1 +1,1 @@
-!function(t,a){"use strict";Drupal.behaviors.govstrap={attach:function(t,a){}}}(jQuery);
+!function(t,a){"use strict";a.behaviors.govstrap={attach:function(t,a){}}}(jQuery,Drupal);

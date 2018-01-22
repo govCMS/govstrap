@@ -19,8 +19,8 @@
 // --- govStrap theme specific styles --------------
 // Variables
 @import 'site-vars';
-// Bootstrap 3 and we give site second chance to alter the variables above.
-@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+// Bootstrap 4 and we give site second chance to alter the variables above.
+@import "node_modules/bootstrap/scss/bootstrap";
 // Main stylesheet
 @import 'site';
 // Responsive styles

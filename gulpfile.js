@@ -64,7 +64,7 @@ gulp.task('scripts', function() {
     }))
     .pipe(gulp.dest('./js/'));
 
-  gulp.src('node_modules/bootstrap-sass/assets/javascripts/**')
+  gulp.src('node_modules/bootstrap/dist/js/**')
     .pipe(plumber({
       errorHandler: onError
     }))
@@ -113,13 +113,6 @@ gulp.task('images', function() {
 
 // Compile the Sass.
 gulp.task('styles', function() {
-  // Bootstrap fonts.
-  gulp.src('node_modules/bootstrap-sass/assets/fonts/**')
-    .pipe(plumber({
-      errorHandler: onError
-    }))
-    .pipe(gulp.dest('./fonts/'));
-
   // Register the PostCSS plugins.
   var postcssPlugins = [
     atImport,
