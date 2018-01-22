@@ -58,6 +58,22 @@ function govstrap_form_system_theme_settings_alter(&$form, $form_state, $form_id
     }
   }
 
+  // jQuery replace settings.
+  $form['jquery'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('jQuery'),
+    '#description' => t("jQuery settings."),
+    '#collapsible' => TRUE,
+    '#collapsed' => FALSE,
+    '#group' => 'group_tabs',
+  );
+
+  $form['jquery']['jquery_replace_enabled'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Replace jQuery'),
+    '#default_value' => theme_get_setting('jquery_replace_enabled'),
+  );
+
   // Fontawesome settings.
   $form['fontawesome'] = array(
     '#type' => 'fieldset',
