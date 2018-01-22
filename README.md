@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project is a govCMS7 light weight bootstrap base theme.
+This project is a govCMS7 light weight Bootstrap 4 base theme.
 
 ### Work with it locally
 
