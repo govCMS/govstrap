@@ -1,11 +1,11 @@
 @font-face {
 	font-family: "govstrap-icons";
-	src: url('/fonts/govstrap-icons.eot');
-	src: url('/fonts/govstrap-icons.eot?#iefix') format('eot'),
-		url('/fonts/govstrap-icons.woff2') format('woff2'),
-		url('/fonts/govstrap-icons.woff') format('woff'),
-		url('/fonts/govstrap-icons.ttf') format('truetype'),
-		url('/fonts/govstrap-icons.svg#govstrap-icons') format('svg');
+	src: url('./fonts/govstrap/govstrap-icons.eot');
+	src: url('./fonts/govstrap/govstrap-icons.eot?#iefix') format('eot'),
+		url('./fonts/govstrap/govstrap-icons.woff2') format('woff2'),
+		url('./fonts/govstrap/govstrap-icons.woff') format('woff'),
+		url('./fonts/govstrap/govstrap-icons.ttf') format('truetype'),
+		url('./fonts/govstrap/govstrap-icons.svg#govstrap-icons') format('svg');
 }
 
 @mixin icon-styles {
@@ -30,6 +30,9 @@
 	@if $filename == drupal {
 		$char: "\E001";
 	}
+	@if $filename == govcms {
+		$char: "\E002";
+	}
 
 	@return $char;
 }
@@ -47,4 +50,7 @@
 
 .icon-drupal {
 	@include icon(drupal);
+}
+.icon-govcms {
+	@include icon(govcms);
 }
